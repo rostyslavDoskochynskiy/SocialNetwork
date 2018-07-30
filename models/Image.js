@@ -4,7 +4,15 @@ let {Schema} = mongoose;
 
 let ImageSchema = new Schema({
     path: String,
-    title: String
+    title: String,
+    galleries: [{
+        type: Schema.Types.ObjectId,
+        ref: 'gallery'
+    }],
+    author: {
+        type: Schema.Types.ObjectId,
+        ref: 'account'
+    }
 },{
     discriminatorKey: 'kind'
 });

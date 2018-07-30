@@ -6,6 +6,14 @@ let {Schema} = mongoose;
 let GroupSchema = new Schema({
     name: String,
     desc: String,
+    subscribers: [{
+        type: Schema.Types.ObjectId,
+        ref: 'account'
+    }],
+    groupReachings: [{
+        type: Schema.Types.ObjectId,
+        ref: 'evaluetable'
+    }]
 },{
     discriminatorKey: 'kind'
 });

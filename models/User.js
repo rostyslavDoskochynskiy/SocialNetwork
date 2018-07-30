@@ -12,7 +12,27 @@ let UserSchema = new Schema({
     email: String,
     about: String,
     relationships: String,
-    hobbies: String
+    hobbies: String,
+    userReaching: [{
+        type: Schema.Types.ObjectId,
+        ref: 'evaluetable'
+    }],
+    messages: [{
+        type: Schema.Types.ObjectId,
+        ref: 'message'
+    }],
+    chats: [{
+        type: Schema.Types.ObjectId,
+        ref: 'chat'
+    }],
+    subscriptions: [{
+        type: Schema.Types.ObjectId,
+        ref: 'account'
+    }],
+    friends: [{
+        type: Schema.Types.ObjectId,
+        ref: 'account'
+    }]
 },{
     discriminatorKey: 'kind'
 });

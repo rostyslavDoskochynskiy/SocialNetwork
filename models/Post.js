@@ -5,7 +5,19 @@ let {Schema} = mongoose;
 
 let PostSchema = new Schema({
     dateOfPost: Date,
-    text: String
+    text: String,
+    images: [{
+        type: Schema.Types.ObjectId,
+        ref: 'image'
+    }],
+    walls: [{
+        type: Schema.Types.ObjectId,
+        ref: 'wall'
+    }],
+    author: {
+        type: Schema.Types.ObjectId,
+        ref: 'account'
+    }
 },{
     discriminatorKey: 'kind'
 });

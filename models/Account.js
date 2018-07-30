@@ -7,6 +7,22 @@ let AccountSchema = new Schema({
     dateOfRegistration: Date,
     login: String,
     password: String,
+    wall: {
+        type: Schema.Types.ObjectId,
+        ref: 'wall'
+    },
+    gallery: {
+        type: Schema.Types.ObjectId,
+        ref: 'gallery'
+    },
+    likes: [{
+        type: Schema.Types.ObjectId,
+        ref: 'like'
+    }],
+    comments: [{
+        type: Schema.Types.ObjectId,
+        ref: 'comment'
+    }]
 },{
     discriminatorKey: 'kind'
 });

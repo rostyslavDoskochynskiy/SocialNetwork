@@ -4,7 +4,7 @@ let {Schema} = mongoose;
 
 let CommentSchema = new Schema({
     text: String,
-    date: Date
+    date: Date,
 });
 
 module.exports = mongoose.model('comment', CommentSchema);
